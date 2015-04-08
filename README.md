@@ -31,7 +31,7 @@ hbs.handlebars.registerHelper('paginateHelper', paginateHelper.createPagination)
 Send the pagination object in your response or express controller
 Example:
 ```javascript
-res.render('renderViewHTML',  pagination: { page: currentPage, limit:PageLimit,totalRows: TotalNoOfROWS }});
+res.render('renderViewHTML', { pagination: { page: currentPage, limit:PageLimit,totalRows: TotalNoOfROWS }});
 ```
 
  ### Usage in Handlebars Template
