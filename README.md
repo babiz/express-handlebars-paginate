@@ -27,7 +27,7 @@ Handlebars.registerHelper('paginate', paginate);
 hbs.handlebars.registerHelper('paginateHelper', paginateHelper.createPagination);
 ```
 
-```handlebars Template
+```handlebars
 {{{paginateHelper pagination}}}
 ```
 
