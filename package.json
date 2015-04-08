@@ -9,8 +9,14 @@
   "keywords": [
     "Express",
     "Handlebars",
-    "Paginate"
+    "Paginate",
+    "Paginate Template",
+    "Pagination"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/babiz/express-handlebars-paginate.git"
+  },
   "author": "Babish Shrestha <babishshrestha@gmail.com>",
-  "license": "BSD"
+  "license": "BSD-3-Clause"
 }
