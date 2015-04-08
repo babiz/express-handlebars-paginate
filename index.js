@@ -60,11 +60,11 @@ exports.createPagination = function (pagination, options) {
 // ========== Next Buton ===========
     if (page === pageCount) {
         n = pageCount;
-        template = template + '<li class="disabled"><a href="?page=' + n + '">'+ leftText +'</i></a></li>';
+        template = template + '<li class="disabled"><a href="?page=' + n + '">'+ rightText +'</i></a></li>';
     }
     else {
         n = page + 1;
-        template = template + '<li><a href="?page=' + n + '">'+ leftText +'</a></li>';
+        template = template + '<li><a href="?page=' + n + '">'+ rightText +'</a></li>';
     }
     template = template + '</ul>';
     return template;
