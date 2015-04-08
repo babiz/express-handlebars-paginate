@@ -1,6 +1,5 @@
 # Express Handlebars Paginate Helper with Twitter Bootstrap Enabled
-
-
+I have created this template as I wanted to have a paginate template that would work on the fly. I don't want to make our own html for that and can be used as a helper for express handlebars. I hope this would be useful for others as well.
 ## Install
 
     npm install express-handlebars-paginate
@@ -16,6 +15,8 @@ Handlebars.registerHelper('paginate', paginate);
 ```
 
 ###With [Handlebars][]
+server.js
+
 ```javascript
 /* ... */
 Handlebars.registerHelper('paginate', paginate);
@@ -27,6 +28,13 @@ Handlebars.registerHelper('paginate', paginate);
 hbs.handlebars.registerHelper('paginateHelper', paginateHelper.createPagination);
 ```
 
+Send the pagination object in your response or express controller
+Example:
+```javascript
+res.render('renderViewHTML', { page: currentPage, limit:PageLimit,totalRows: TotalNoOfROWS });
+```
+
+ ### Usage in Handlebars Template
 ```handlebars
 {{{paginateHelper pagination}}}
 ```
