@@ -1,6 +1,6 @@
 {
   "name": "express-handlebars-paginate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An pagintate template helper for handlebars and express",
   "main": "index.js",
   "scripts": {
