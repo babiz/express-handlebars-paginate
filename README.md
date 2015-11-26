@@ -34,6 +34,12 @@ Example:
 res.render('renderViewHTML', { pagination: { page: currentPage, limit:PageLimit,totalRows: TotalNoOfROWS }});
 ```
 
+Query Parameter : Allows to send query parameters to paginatin
+
+```javascript
+res.render('renderViewHTML', { pagination: { page: currentPage, limit:PageLimit,totalRows: TotalNoOfROWS, queryParams: object }});
+```
+
  ### Usage in Handlebars Template
 ```handlebars
 {{{paginateHelper pagination}}}
@@ -83,3 +89,4 @@ Allows to define the ul pagination class
 ```handlebars
 {{paginate pagination paginationClass="some class"}}
 ```
+
