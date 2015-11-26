@@ -6,8 +6,10 @@ exports.createPagination = function (pagination, options) {
     if (!pagination) {
         return '';
     }
+
     var limit = 7
         , n;
+    var queryParams='';
     var page = pagination.page;
     var leftText = '<i class="fa fa-chevron-left"></i>';
     var rightText = '<i class="fa fa-chevron-right"></i>';
@@ -20,16 +22,33 @@ exports.createPagination = function (pagination, options) {
 
     var pageCount = Math.ceil(pagination.totalRows / pagination.limit);
 
+    //query params
+    if(pagination.queryParams){
+        queryParams = '&';
+        for (var key in pagination.queryParams) {
+            if (pagination.queryParams.hasOwnProperty(key) && key !== 'page') {
+                queryParams += key+"="+pagination.queryParams[key]+"&";
+            }
+        }
+        var lastCharacterOfQueryParams = queryParams.substring(queryParams.length,-1);
+
+        if(lastCharacterOfQueryParams === "&"){
+            //trim off last & character
+            queryParams = queryParams.substring(0,queryParams.length-1);
+        }
+    }
+
+
     var template = '<ul class="' + paginationClass + '">';
 
     // ========= Previous Button ===============
     if (page === 1) {
         n = 1;
-        template = template + '<li class="disabled"><a href="?page=' + n + '">'+ leftText +'</a></li>';
+        template = template + '<li class="disabled"><a href="?page=' + n + queryParams + '">'+ leftText +'</a></li>';
     }
     else {
         n = page - 1;
-        template = template + '<li><a href="?page=' + n + '">'+ leftText +'</a></li>';
+        template = template + '<li><a href="?page=' + n + queryParams + '">'+ leftText +'</a></li>';
     }
 
     // ========= Page Numbers Middle ======
@@ -47,10 +66,10 @@ exports.createPagination = function (pagination, options) {
 
     while (i < limit && i < pageCount) {
         n = start;
-        if (start == page) {
-            template = template + '<li class="active"><a href="?page=' + n + '">' + n + '</a></li>';
+        if (start === page) {
+            template = template + '<li class="active"><a href="?page=' + n + queryParams + '">' + n + '</a></li>';
         } else {
-            template = template + '<li><a href="?page=' + n + '">' + n + '</a></li>';
+            template = template + '<li><a href="?page=' + n + queryParams + '">' + n + '</a></li>';
         }
 
         start++;
@@ -58,13 +77,13 @@ exports.createPagination = function (pagination, options) {
     }
 
 // ========== Next Buton ===========
-    if (page == pageCount) {
+    if (page === pageCount) {
         n = pageCount;
-        template = template + '<li class="disabled"><a href="?page=' + n + '">'+ rightText +'</i></a></li>';
+        template = template + '<li class="disabled"><a href="?page=' + n + queryParams + '">'+ rightText +'</i></a></li>';
     }
     else {
-        n = parseFloat(page) + 1;
-        template = template + '<li><a href="?page=' + n + '">'+ rightText +'</a></li>';
+        n = page + 1;
+        template = template + '<li><a href="?page=' + n + queryParams + '">'+ rightText +'</a></li>';
     }
     template = template + '</ul>';
     return template;
