@@ -7,7 +7,6 @@ exports.createPagination = function (pagination, options) {
         return '';
     }
 
-    console.log(pagination);
     var limit = 7
         , n;
     var queryParams='';
