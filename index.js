@@ -44,7 +44,7 @@ exports.createPagination = function (pagination, options) {
     // ========= Previous Button ===============
     if (page === 1) {
         n = 1;
-        template = template + '<li class="disabled"><a href="?page=' + n + queryParams + '">'+ leftText +'</a></li>';
+        template = template + '<li class="disabled"><a href="#">'+ leftText +'</a></li>';
     }
     else {
         n = page - 1;
@@ -76,10 +76,10 @@ exports.createPagination = function (pagination, options) {
         i++;
     }
 
-// ========== Next Buton ===========
-    if (page === pageCount) {
+    // ========== Next Button ===========
+    if (page === pageCount || pageCount === 0) {
         n = pageCount;
-        template = template + '<li class="disabled"><a href="?page=' + n + queryParams + '">'+ rightText +'</i></a></li>';
+        template = template + '<li class="disabled"><a href="#">'+ rightText +'</i></a></li>';
     }
     else {
         n = page + 1;
