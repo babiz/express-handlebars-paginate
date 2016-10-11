@@ -30,7 +30,7 @@ exports.createPagination = function (pagination, options) {
                 queryParams += key+"="+pagination.queryParams[key]+"&";
             }
         }
-        var lastCharacterOfQueryParams = queryParams.substring(queryParams.length,-1);
+        var lastCharacterOfQueryParams = queryParams.substr(queryParams.length-1,1);
 
         if(lastCharacterOfQueryParams === "&"){
             //trim off last & character
