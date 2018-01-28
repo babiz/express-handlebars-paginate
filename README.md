@@ -11,7 +11,7 @@ I have created this template as I wanted to have a paginate template that would 
 
 var paginateHelper = require('express-handlebars-paginate');
 //Register Helper
-Handlebars.registerHelper('paginate', paginate);
+Handlebars.registerHelper('paginateHelper', paginateHelper);
 ```
 
 ###With [Handlebars][]
@@ -19,7 +19,7 @@ server.js
 
 ```javascript
 /* ... */
-Handlebars.registerHelper('paginate', paginate);
+Handlebars.registerHelper('paginateHelper', paginateHelper);
 ```
 
 ###With [Express Handlebars][]
@@ -57,7 +57,7 @@ Default: `7`
 Allows to define the number of page number limit
 
 ```handlebars
-{{paginate pagination limit="7"}}
+{{paginateHelper pagination limit="7"}}
 ```
 
 ### leftText
@@ -67,7 +67,7 @@ Default: `<i class="fa fa-chevron-left"></i>`
 Allows to define the text for left link
 
 ```handlebars
-{{paginate pagination leftText="Prev"}}
+{{paginateHelper pagination leftText="Prev"}}
 ```
 
 ### rightText
@@ -77,7 +77,7 @@ Default: `<i class="fa fa-chevron-right"></i>`
 Allows to define the text for right link
 
 ```handlebars
-{{paginate pagination rightText="Next"}}
+{{paginateHelper pagination rightText="Next"}}
 ```
 
 ### paginationClass
@@ -87,6 +87,6 @@ Default: `pagination pagination-sm`
 Allows to define the ul pagination class
 
 ```handlebars
-{{paginate pagination paginationClass="some class"}}
+{{paginateHelper pagination paginationClass="some class"}}
 ```
 
