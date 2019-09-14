@@ -1,7 +1,9 @@
 # Express Handlebars Paginate Helper with Twitter Bootstrap Enabled
 I have created this template as I wanted to have a paginate template that would work on the fly. I don't want to make our own html for that and can be used as a helper for express handlebars. I hope this would be useful for others as well.
 
-![screenshot][screenshot]
+## Screenshot
+
+![Screenshot](screenshot.png "Pagination screenshot")
 
 ## Install
 

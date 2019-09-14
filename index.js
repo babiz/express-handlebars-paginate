@@ -66,7 +66,6 @@ exports.createPagination = (pagination, options) => {
     }
 
     // ========= Page Numbers Middle ======
-
     var i = 0;
     var leftCount = Math.ceil(limit / 2) - 1;
     var rightCount = limit - leftCount - 1;
