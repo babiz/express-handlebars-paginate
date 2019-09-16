@@ -1,5 +1,10 @@
 # Express Handlebars Paginate Helper with Twitter Bootstrap Enabled
 I have created this template as I wanted to have a paginate template that would work on the fly. I don't want to make our own html for that and can be used as a helper for express handlebars. I hope this would be useful for others as well.
+
+## Screenshot
+
+![Screenshot](screenshot.png "Pagination screenshot")
+
 ## Install
 
     npm install express-handlebars-paginate
@@ -62,7 +67,7 @@ Allows to define the number of page number limit
 
 ### leftText
 Type: `string`
-Default: `<i class="fa fa-chevron-left"></i>`
+Default: `<i class="fas fa-angle-left"></i>`
 
 Allows to define the text for left link
 
@@ -72,12 +77,32 @@ Allows to define the text for left link
 
 ### rightText
 Type: `string`
-Default: `<i class="fa fa-chevron-right"></i>`
+Default: `<i class="fas fa-angle-right"></i>`
 
 Allows to define the text for right link
 
 ```handlebars
 {{paginateHelper pagination rightText="Next"}}
+```
+
+### firstText
+Type: `string`
+Default: `<i class="fas fa-angle-double-left"></i>`
+
+Allows to define the text for first link
+
+```handlebars
+{{paginateHelper pagination firstText="First"}}
+```
+
+### lastText
+Type: `string`
+Default: `<i class="fas fa-angle-double-right"></i>`
+
+Allows to define the text for last link
+
+```handlebars
+{{paginateHelper pagination lastText="Last"}}
 ```
 
 ### paginationClass
